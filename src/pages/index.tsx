@@ -21,7 +21,7 @@ export default function Home({ images }: ImagesProps) {
   return (
     <>
       <Head>
-        <title>Home | Inatruck</title>
+        <title>Inatruck</title>
       </Head>
 
       <div className={styles.containerBanner}>
@@ -31,6 +31,53 @@ export default function Home({ images }: ImagesProps) {
           )
         })}
       </div>
+
+      <div className={styles.containerCatalogo}> 
+        <h3> CATÁLOGO VIRTUAL</h3>
+        <hr/>
+        <p> Acesse nosso catalogo virtual e fique por dentro dos lançamentos anuais</p>
+
+        {/* imagem catalogo inatruck. Figma Model , pego pelo CMS */}
+        {/* <img src="" alt=""/> */}
+
+        <a> Acesse </a>
+      </div>
+
+      <div className={styles.containerQuemsomos}> 
+        <h3> Quem somos</h3>
+        <hr/>
+        <p> Desde a fundação da empresa em 2006, a Inatruck aposta no desenvolvimento constante do seu sortimento de peças de reposição para ônibus e caminhões grandes, médios e pequenos. Com aproximadamente 600 itens de reposição, oferecem hoje ao amigo cliente uma variedade muito ampla para a linha de suspensão de ônibus e caminhões de cargas dos fabricantes líderes de mercado no Brasil.</p>
+        
+        {/* logo  inatruck IK  grande. Figma Model */}
+        {/* <img src="" alt=""/> */}
+        
+        <a> SAIBA MAIS </a>
+        <a> FALE CONOSCO </a>
+      </div>
+
+      <div className={styles.footer}>
+        {/* imagem preta inatruck escrito. Figma Model */}
+        {/* <img src="" alt=""/> */}
+
+        <span>(47) 3382-4161</span>
+        <span>Rua Blumenau, Número 4920, Bairro Araponguinhas - Timbó - Santa Catarina </span>
+        <hr/>
+        <ul>
+          <li>Home</li>
+          <li>Fale Conosco</li>
+          <li>Catálogo Virtual</li>
+        </ul>
+
+        <ul>
+          <li>Projetos Customizados</li>
+          <li>Rede Logística</li>
+          <li>Catálogo Virtual</li>
+        </ul>
+
+      </div>
+
+
+
     </>
   )
 }
