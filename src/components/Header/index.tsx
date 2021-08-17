@@ -24,7 +24,10 @@ export function Header() {
           <ActiveLink activeClassName={styles.active} href="/contact">
             <a>CONTATO</a>
           </ActiveLink>
+
+          
         </nav>
+        <hr/>
       </div>
     </header>
   );
