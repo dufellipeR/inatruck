@@ -4,6 +4,8 @@ import Head from 'next/head';
 import { getPrismicClient } from '../services/prismic';
 import Prismic from '@prismicio/client';
 
+import BannerCatalog from '../../public/images/banner-catalog.png';
+
 import styles from './home.module.scss';
 
 type Image = {
@@ -16,8 +18,6 @@ interface ImagesProps {
 }
 
 export default function Home({ images }: ImagesProps) {
-  console.log('front-images: ', images);
-
   return (
     <>
       <Head>
@@ -32,51 +32,78 @@ export default function Home({ images }: ImagesProps) {
         })}
       </div>
 
-      <div className={styles.containerCatalogo}> 
-        <h3> CATÁLOGO VIRTUAL</h3>
-        <hr/>
-        <p> Acesse nosso catalogo virtual e fique por dentro dos lançamentos anuais</p>
+      <main>
+        <div className={styles.containerCatalog}>
+          <div className={styles.contentCatalog}>
+            <section>
+              <h3> CATÁLOGO VIRTUAL</h3>
+              <hr/>
+              <p> Acesse nosso catalogo virtual e fique por dentro dos lançamentos anuais</p>
+              <a> Acesse </a>
+            </section>
 
-        {/* imagem catalogo inatruck. Figma Model , pego pelo CMS */}
-        {/* <img src="" alt=""/> */}
+            <img 
+              src='/images/banner-catalog.png' 
+              alt="banner-catalog" 
+              style={{
+                width: 400,
+                height: 600,
+              }} 
+            />
+          </div>
+        </div>
 
-        <a> Acesse </a>
-      </div>
-
-      <div className={styles.containerQuemsomos}> 
-        <h3> Quem somos</h3>
-        <hr/>
-        <p> Desde a fundação da empresa em 2006, a Inatruck aposta no desenvolvimento constante do seu sortimento de peças de reposição para ônibus e caminhões grandes, médios e pequenos. Com aproximadamente 600 itens de reposição, oferecem hoje ao amigo cliente uma variedade muito ampla para a linha de suspensão de ônibus e caminhões de cargas dos fabricantes líderes de mercado no Brasil.</p>
-        
-        {/* logo  inatruck IK  grande. Figma Model */}
-        {/* <img src="" alt=""/> */}
-        
-        <a> SAIBA MAIS </a>
-        <a> FALE CONOSCO </a>
-      </div>
-
-      <div className={styles.footer}>
-        {/* imagem preta inatruck escrito. Figma Model */}
-        {/* <img src="" alt=""/> */}
-
-        <span>(47) 3382-4161</span>
-        <span>Rua Blumenau, Número 4920, Bairro Araponguinhas - Timbó - Santa Catarina </span>
-        <hr/>
-        <ul>
-          <li>Home</li>
-          <li>Fale Conosco</li>
-          <li>Catálogo Virtual</li>
-        </ul>
-
-        <ul>
-          <li>Projetos Customizados</li>
-          <li>Rede Logística</li>
-          <li>Catálogo Virtual</li>
-        </ul>
-
-      </div>
+        <div className={styles.containerAbout}> 
+          <section>
+            <h3> Quem somos</h3>
+            <hr/>
+            <p> Desde a fundação da empresa em 2006, a Inatruck aposta no desenvolvimento constante do seu sortimento de peças de reposição para ônibus e caminhões grandes, médios e pequenos. Com aproximadamente 600 itens de reposição, oferecem hoje ao amigo cliente uma variedade muito ampla para a linha de suspensão de ônibus e caminhões de cargas dos fabricantes líderes de mercado no Brasil.</p>
+            <div id="container-buttons">
+              <a> SAIBA MAIS </a>
+              <a> FALE CONOSCO </a>
+            </div>
+          </section>
+          
+          <img 
+            src='/images/ik-logo.png' 
+            alt="ik-logo" 
+            style={{
+              width: 200,
+              height: 200,
+            }} 
+          />
 
 
+        </div>
+
+        <div className={styles.containerFooter}>
+          <div className={styles.contentFooter}>
+            <img 
+                src='/images/logo-escrito.png' 
+                alt="logo-escrito" 
+                style={{
+                  width: 200,
+                  height: 50,
+                }} 
+              />
+
+              <span>(47) 3382-4161</span>
+              <span>Rua Blumenau, Número 4920, Bairro Araponguinhas - Timbó - Santa Catarina </span>
+              <hr/>
+              <ul>
+                <li>Home</li>
+                <li>Fale Conosco</li>
+                <li>Catálogo Virtual</li>
+              </ul>
+
+              <ul>
+                <li>Projetos Customizados</li>
+                <li>Rede Logística</li>
+                <li>Catálogo Virtual</li>
+              </ul>
+          </div>
+        </div>
+      </main>
 
     </>
   )
