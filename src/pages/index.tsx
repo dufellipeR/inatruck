@@ -4,7 +4,7 @@ import Head from 'next/head';
 import { getPrismicClient } from '../services/prismic';
 import Prismic from '@prismicio/client';
 
-import BannerCatalog from '../../public/images/banner-catalog.png';
+import Footer from '../components/Footer';
 
 import styles from './home.module.scss';
 
@@ -76,33 +76,7 @@ export default function Home({ images }: ImagesProps) {
 
         </div>
 
-        <div className={styles.containerFooter}>
-          <div className={styles.contentFooter}>
-            <img 
-                src='/images/logo-escrito.png' 
-                alt="logo-escrito" 
-                style={{
-                  width: 200,
-                  height: 50,
-                }} 
-              />
-
-              <span>(47) 3382-4161</span>
-              <span>Rua Blumenau, Número 4920, Bairro Araponguinhas - Timbó - Santa Catarina </span>
-              <hr/>
-              <ul>
-                <li>Home</li>
-                <li>Fale Conosco</li>
-                <li>Catálogo Virtual</li>
-              </ul>
-
-              <ul>
-                <li>Projetos Customizados</li>
-                <li>Rede Logística</li>
-                <li>Catálogo Virtual</li>
-              </ul>
-          </div>
-        </div>
+        <Footer />
       </main>
 
     </>
