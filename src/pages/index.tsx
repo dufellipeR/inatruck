@@ -2,13 +2,14 @@ import { Box, Image, Flex, Text, Divider, Link } from '@chakra-ui/react';
 
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
-
-import { getPrismicClient } from '../services/prismic';
 import Prismic from '@prismicio/client';
 
-import Footer from '../components/Footer';
+import { getPrismicClient } from '../services/prismic';
 
-import styles from './home.module.scss';
+import Footer from '../components/Footer';
+import Carousel from '../components/Carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 
 type Image = {
   uid: string;
@@ -25,14 +26,8 @@ export default function Home({ images }: ImagesProps) {
       <Head>
         <title>Inatruck</title>
       </Head>
-
-      <Box>
-        {images.map(image => {
-          return (
-            <Image key={image.uid} src={`${image.url}`} alt={`${image.uid}`} />
-          )
-        })}
-      </Box>
+        
+      <Carousel images={images} />
 
       <Box as="main">
         <Box boxShadow="2px 2px 2px 1px rgba(0, 0, 0, 0.2)">
