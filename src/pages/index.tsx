@@ -1,3 +1,5 @@
+import { Box, Image, Flex, Text, Divider, Link } from '@chakra-ui/react';
+
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 
@@ -24,60 +26,108 @@ export default function Home({ images }: ImagesProps) {
         <title>Inatruck</title>
       </Head>
 
-      <div className={styles.containerBanner}>
+      <Box>
         {images.map(image => {
           return (
-            <img key={image.uid} src={`${image.url}`} alt={`${image.uid}`} />
+            <Image key={image.uid} src={`${image.url}`} alt={`${image.uid}`} />
           )
         })}
-      </div>
+      </Box>
 
-      <main>
-        <div className={styles.containerCatalog}>
-          <div className={styles.contentCatalog}>
-            <section>
-              <h3> CATÁLOGO VIRTUAL</h3>
-              <hr/>
-              <p> Acesse nosso catalogo virtual e fique por dentro dos lançamentos anuais</p>
-              <a> Acesse </a>
-            </section>
+      <Box as="main">
+        <Box boxShadow="2px 2px 2px 1px rgba(0, 0, 0, 0.2)">
+          <Flex 
+            maxW={1120}
+            m="5rem auto"
+            p={{ sm: '2rem', lg: '0 2rem' }}
+            justify={{ sm: 'center', lg: 'space-between' }}
+            align="center"
+          >
+            <Flex
+              w={{ sm: '60%', lg: '35%' }}
+              direction="column"
+              align="left"
+              gridGap="1rem"
+            >
+              <Text fontSize="2rem"> CATÁLOGO VIRTUAL</Text>
+              <Divider w="70%" ml="-5rem" />
+              <Text fontSize="1rem"> Acesse nosso catalogo virtual e fique por dentro dos lançamentos anuais</Text>
+              <Link
+                maxW="7rem"
+                fontSize="1rem"
+                bg="#D12128"
+                color="#FFF"
+                p="0.5rem 1rem"
+                textAlign="center"
+              >
+                Acesse
+              </Link>
+            </Flex>
 
-            <img 
+            <Image 
               src='/images/banner-catalog.png' 
               alt="banner-catalog" 
-              style={{
-                width: 400,
-                height: 600,
-              }} 
+              w={400}
+              height={600}
+              mb="-2rem"
+              display={{ sm: 'none', lg: 'block' }}
             />
-          </div>
-        </div>
+          </Flex>
+        </Box>
 
-        <div className={styles.containerAbout}> 
-          <section>
-            <h3> Quem somos</h3>
-            <hr/>
-            <p> Desde a fundação da empresa em 2006, a Inatruck aposta no desenvolvimento constante do seu sortimento de peças de reposição para ônibus e caminhões grandes, médios e pequenos. Com aproximadamente 600 itens de reposição, oferecem hoje ao amigo cliente uma variedade muito ampla para a linha de suspensão de ônibus e caminhões de cargas dos fabricantes líderes de mercado no Brasil.</p>
-            <div id="container-buttons">
-              <a> SAIBA MAIS </a>
-              <a> FALE CONOSCO </a>
-            </div>
-          </section>
+        <Flex
+         maxW={1120}
+         m="5rem auto"
+         p="0 2rem"
+         justify={{ sm: 'center', lg: 'space-between' }}
+         align="center"
+        > 
+          <Flex
+            w={{ sm: '60%', lg: '35%' }}
+            direction="column"
+            align="left"
+            gridGap="1rem"
+          >
+            <Text fontSize="2rem"> Quem somos</Text>
+            <Divider w="70%" ml="-5rem" />
+            <Text fontSize="1rem"> Desde a fundação da empresa em 2006, a Inatruck aposta no desenvolvimento constante do seu sortimento de peças de reposição para ônibus e caminhões grandes, médios e pequenos. Com aproximadamente 600 itens de reposição, oferecem hoje ao amigo cliente uma variedade muito ampla para a linha de suspensão de ônibus e caminhões de cargas dos fabricantes líderes de mercado no Brasil.</Text>
+            <Flex 
+              justify="left"
+              align="center"
+              gridGap="1rem"
+            >
+              <Link
+                fontSize="1rem"
+                bg="#D12128"
+                color="#FFF"
+                p="0.5rem 1rem"
+                textAlign="center"
+              >
+                SAIBA MAIS
+              </Link>
+              <Link
+                fontSize="1rem"
+                bg="#D12128"
+                color="#FFF"
+                p="0.5rem 1rem"
+                textAlign="center"
+              >
+                FALE CONOSCO
+              </Link>
+            </Flex>
+          </Flex>
           
-          <img 
+          <Image 
             src='/images/ik-logo.png' 
-            alt="ik-logo" 
-            style={{
-              width: 200,
-              height: 200,
-            }} 
+            alt="ik-logo"
+            w={200}
+            h={200} 
+            display={{ sm: 'none', lg: 'block' }}
           />
-
-
-        </div>
+        </Flex>
 
         <Footer />
-      </main>
+      </Box>
 
     </>
   )
