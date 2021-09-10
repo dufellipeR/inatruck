@@ -23,14 +23,12 @@ export default function Services() {
 
       <HeaderContent
         title="Serviços"
-        description=""
       />
 
       <Box
         w="100%"
         p={{ sm: '0', lg: '1rem 0 5rem 0' }}
       >
-
         { /* Service Box */}
         <Box w="100%"
           p={{ sm: '0', lg: '3rem 0 5rem 0' }}
@@ -43,7 +41,7 @@ export default function Services() {
             textAlign="center"
             p={{ sm: '0 2rem', lg: '0' }}
           >
-            <Text fontSize="2rem" marginBottom="4rem"  >Rede Logística</Text>
+            <Text fontSize="2rem" marginBottom="4rem">Rede Logística</Text>
             <Flex
               maxW={1120}
               h="100%"
@@ -54,25 +52,23 @@ export default function Services() {
               p={{ sm: '0 2rem', lg: '0' }}
             >
               <Box>
-                <Lottie options={{
-                  loop: true,
-                  autoplay: true,
-                  animationData: logisticaAnimation,
-                  rendererSettings: {
-                    preserveAspectRatio: 'xMidYMid slice'
-                  }
-                }}
+                <Lottie 
+                  options={{
+                    loop: true,
+                    autoplay: true,
+                    animationData: logisticaAnimation,
+                    rendererSettings: {
+                      preserveAspectRatio: 'xMidYMid slice'
+                    }
+                  }}
                   height={300}
                   width={400}
                   isStopped={animationState.isStopped}
                   isPaused={animationState.isPaused}
-
-
                 />
               </Box>
 
               <Box w={{ sm: '100%', lg: '60%' }}>
-
                 <Text fontSize="1rem">
                   A entrega do material adquirido (acima de R$ 1.500,00)
                   é realizada por uma transportadora contratada pela Inatruck
@@ -85,9 +81,8 @@ export default function Services() {
                   O prazo médio de entrega fica em 15 dias para
                   a Região Sul e São Paulo e para as demais regiões de acordo com o
                   prazo de entrega da transportadora de redespacho a ser contratada pelo cliente.
-              </Text>
+                </Text>
               </Box>
-
             </Flex>
           </Flex>
         </Box>
@@ -106,7 +101,7 @@ export default function Services() {
             textAlign="center"
             p={{ sm: '0 2rem', lg: '0' }}
           >
-            <Text fontSize="2rem" marginBottom="4rem"  >Compra e Venda</Text>
+            <Text fontSize="2rem" marginBottom="4rem">Compra e Venda</Text>
             <Flex
               maxW={1120}
               h="100%"
@@ -117,25 +112,23 @@ export default function Services() {
               p={{ sm: '0 2rem', lg: '0' }}
             >
               <Box>
-                <Lottie options={{
-                  loop: true,
-                  autoplay: true,
-                  animationData: exchangeAm,
-                  rendererSettings: {
-                    preserveAspectRatio: 'xMidYMid slice'
-                  }
-                }}
+                <Lottie 
+                  options={{
+                    loop: true,
+                    autoplay: true,
+                    animationData: exchangeAm,
+                    rendererSettings: {
+                      preserveAspectRatio: 'xMidYMid slice'
+                    }
+                  }}
                   height={300}
                   width={300}
                   isStopped={animationState.isStopped}
                   isPaused={animationState.isPaused}
-
-
                 />
               </Box>
 
               <Box w={{ sm: '100%', lg: '60%' }}>
-
                 <Text fontSize="1rem">
                   Além dos representantes, a venda direto de fábrica é um meio
                   eficiente de adquirir o produto com preço mais em conta, portanto
@@ -144,9 +137,8 @@ export default function Services() {
                   telefone (para clientes cadastrados).
                   Faça o depósito e envie o comprovante para o e-mail inatruck@hotmail.com.
                   Ou então solicite o envio do boleto de cobrança pelo e-mail inatruck@hotmail.com.
-              </Text>
+                </Text>
               </Box>
-
             </Flex>
           </Flex>
         </Box>
@@ -163,7 +155,7 @@ export default function Services() {
             textAlign="center"
             p={{ sm: '0 2rem', lg: '0' }}
           >
-            <Text fontSize="2rem" marginBottom="4rem" >Projetos Customizados</Text>
+            <Text fontSize="2rem" marginBottom="4rem">Projetos Customizados</Text>
             <Flex
               maxW={1120}
               h="100%"
@@ -174,25 +166,23 @@ export default function Services() {
               p={{ sm: '0 2rem', lg: '0' }}
             >
               <Box>
-                <Lottie options={{
-                  loop: true,
-                  autoplay: true,
-                  animationData: customizedAm,
-                  rendererSettings: {
-                    preserveAspectRatio: 'xMidYMid slice'
-                  }
-                }}
+                <Lottie 
+                  options={{
+                    loop: true,
+                    autoplay: true,
+                    animationData: customizedAm,
+                    rendererSettings: {
+                      preserveAspectRatio: 'xMidYMid slice'
+                    }
+                  }}
                   height={400}
                   width={400}
                   isStopped={animationState.isStopped}
                   isPaused={animationState.isPaused}
-
-
                 />
               </Box>
 
               <Box w={{ sm: '100%', lg: '60%' }}>
-
                 <Text fontSize="1rem">
                   A Inatruck produz peças de acordo com as necessidades individuais dos clientes.
                   Com base nisso, elaboramos projetos que atendam as necessidades específicas de cada um,
@@ -203,19 +193,12 @@ export default function Services() {
                   Temos atualmente capacidade para produção de qualquer tipo de adaptação para a linha de suspensão pesada.
                   Utilizando matéria prima de procedência, cuja qualidade pode ser atestada pela longevidade de
                   seus produtos, garante a segurança que o caminhoneiro precisa em suas jornadas.
-              </Text>
+                </Text>
               </Box>
-
             </Flex>
           </Flex>
         </Box>
-
       </Box>
-
-
-
-
     </>
-
   )
 }
