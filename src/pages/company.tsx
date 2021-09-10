@@ -2,6 +2,7 @@ import { Flex, Box, Text, Divider, Grid, Image, Link, useBreakpointValue } from 
 import Head from 'next/head';
 
 import HeaderContent from '../components/HeaderContent';
+import ButtonLink from '../components/ButtonLink';
 
 export default function Company() {
   const isSmallScreen = useBreakpointValue({
@@ -81,16 +82,7 @@ export default function Company() {
                   dos clientes. 
                 </Text>
               </Box>
-              <Link
-                fontSize="1rem"
-                bg="#D12128"
-                color="#FFF"
-                p="0.5rem 1rem"
-                textAlign="center"
-                maxW="50%"
-              >
-                Conheça
-              </Link>
+              <ButtonLink text="Conheça" />
               <Text>
                 Em se tratando de peças de reposição para caminhões e ônibus, 
                 não tenha dúvida, temos um ótimo custo/benefício. Confira!
@@ -148,16 +140,7 @@ export default function Company() {
                   dos clientes. 
                 </Text>
               </Box>
-              <Link
-                fontSize="1rem"
-                bg="#D12128"
-                color="#FFF"
-                p="0.5rem 1rem"
-                textAlign="center"
-                maxW="50%"
-              >
-                Conheça
-              </Link>
+              <ButtonLink text="Conheça" />
               <Text>
                 Em se tratando de peças de reposição para caminhões e ônibus, 
                 não tenha dúvida, temos um ótimo custo/benefício. Confira!
@@ -219,16 +202,7 @@ export default function Company() {
             para os clientes no website, bem como no catálogo 
             de peças da Inatruck.
           </Text>
-          <Link
-            fontSize="1rem"
-            bg="#D12128"
-            color="#FFF"
-            p="0.5rem 1rem"
-            textAlign="center"
-            maxW="40%"
-          >
-            Contato
-          </Link>
+          <ButtonLink text="Contato" />
         </Flex>
         
       ) : (
@@ -264,16 +238,7 @@ export default function Company() {
                 para os clientes no website, bem como no catálogo 
                 de peças da Inatruck.
               </Text>
-              <Link
-                fontSize="1rem"
-                bg="#D12128"
-                color="#FFF"
-                p="0.5rem 1rem"
-                textAlign="center"
-                maxW="40%"
-              >
-                Contato
-              </Link>
+              <ButtonLink text="Contato" />
             </Flex>
 
             <Box />

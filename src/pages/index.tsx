@@ -6,7 +6,7 @@ import Prismic from '@prismicio/client';
 
 import { getPrismicClient } from '../services/prismic';
 
-import Footer from '../components/Footer';
+import ButtonLink from '../components/ButtonLink';
 import Carousel from '../components/Carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
@@ -46,16 +46,7 @@ export default function Home({ images }: ImagesProps) {
               <Text fontSize="2rem"> CATÁLOGO VIRTUAL</Text>
               <Divider w="70%" ml="-5rem" />
               <Text fontSize="1rem"> Acesse nosso catalogo virtual e fique por dentro dos lançamentos anuais</Text>
-              <Link
-                maxW="7rem"
-                fontSize="1rem"
-                bg="#D12128"
-                color="#FFF"
-                p="0.5rem 1rem"
-                textAlign="center"
-              >
-                Acesse
-              </Link>
+              <ButtonLink text="Acesse" />
             </Flex>
 
             <Image 
@@ -90,24 +81,8 @@ export default function Home({ images }: ImagesProps) {
               align="center"
               gridGap="1rem"
             >
-              <Link
-                fontSize="1rem"
-                bg="#D12128"
-                color="#FFF"
-                p="0.5rem 1rem"
-                textAlign="center"
-              >
-                SAIBA MAIS
-              </Link>
-              <Link
-                fontSize="1rem"
-                bg="#D12128"
-                color="#FFF"
-                p="0.5rem 1rem"
-                textAlign="center"
-              >
-                FALE CONOSCO
-              </Link>
+              <ButtonLink text="Saiba Mais" />
+              <ButtonLink text="Fale Conosco" />
             </Flex>
           </Flex>
           
