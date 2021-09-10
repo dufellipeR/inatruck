@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react';
 import { FiMenu } from 'react-icons/fi';
 
-import { ActiveLink } from '../ActiveLink';
+import { ActiveLink } from './ActiveLink';
 
 export default function Header() {
   const isHamburgerMenu = useBreakpointValue({

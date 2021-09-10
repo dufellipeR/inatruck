@@ -1,7 +1,12 @@
-import { Flex, Box, Text, Divider, Grid, Image, Link } from '@chakra-ui/react';
+import { Flex, Box, Text, Divider, Grid, Image, Link, useBreakpointValue } from '@chakra-ui/react';
 import Head from 'next/head';
 
 export default function Company() {
+  const isSmallScreen = useBreakpointValue({
+    base: true,
+    lg: false,
+  });
+
   return (
     <>
       <Head>
@@ -15,20 +20,19 @@ export default function Company() {
         mb="2rem"
       >
         <Grid 
-          maxW={1120}
           h="100%"
           m="0 auto"
-          p={{ sm: '2rem', lg: '0 2rem' }}
+          p={{ sm: '2rem', lg: '0' }}
           templateColumns="1fr 1fr"
           justify={{ sm: 'center', lg: 'space-between' }}
           alignItems="center"
         > 
-          <Flex direction="column" align="flex-end" gridGap="0.5rem">
+          <Flex direction="column" align="flex-end" gridGap="0.5rem" maxW="70%">
             <Text fontSize="2rem" color="#FFF">Sobre a Inatruck</Text>
             <Divider 
-              w="80%" 
+              w="100%" 
               border="none"
-              h="4px"
+              h="2px"
               bg="#FFF"
               borderRadius={4}
               opacity={1}
@@ -42,8 +46,9 @@ export default function Company() {
             borderBottomStyle="solid"
             borderRadius={4}
             pt="6rem"
-            w="80%"
+            w="100%"
             ml="auto"
+            maxW="70%"
           />
 
         </Grid>
@@ -51,8 +56,7 @@ export default function Company() {
     
       <Box     
         w="100%" 
-        p="3rem 0"
-        mb="2rem"
+        p={{ sm: '0', lg: '3rem 0 5rem 0' }}
       >
         <Flex
           maxW={1120}
@@ -85,73 +89,231 @@ export default function Company() {
             display={{ sm: 'none', lg: 'block' }}
           />
         </Flex>
-      
-        <Grid templateColumns="0.3fr 1fr 1fr" mt="10rem">
-          <Box />
 
-          <Flex direction="column" justify="space-between" maxW="80%">
-            <Box>
-              <Text fontSize="2rem">Linhas Premium</Text>
-              <Text fontSize="1rem">
-                As peças de reposição da Inatruck convencem
-                devido à sua excelente relação custo-benefício
-                e disponibilidade constante assegurada pela 
-                logística eficiente. Apostando todo seu esforço
-                específico na Linha Pino de Mola e na Linha 3º Eixo
-                , trabalham para satisfazer as verdadeiras necessidades
-                dos clientes. 
-              </Text>
-            </Box>
-            <Link
-              fontSize="1rem"
-              bg="#D12128"
-              color="#FFF"
-              p="0.5rem 1rem"
-              textAlign="center"
-              maxW="50%"
-            >
-              Conheça
-            </Link>
-            <Text>
-              Em se tratando de peças de reposição para caminhões e ônibus, 
-              não tenha dúvida, temos um ótimo custo/benefício. Confira!
-            </Text>
-          </Flex>
-
+        {isSmallScreen ? (
           <Flex 
-            bg="#D02129" 
-            borderRadius={4} 
             direction="column" 
-            p="2rem" 
-            color="#FFF" 
-            gridGap="2rem"
+            align="center"
+            mt="2rem"
           >
-            <Box>
-              <Text fontSize="2rem">Missão</Text>
-              <Text fontSize="1rem">
-                Fabricar toda linha de suspenção e implementos rodoviários
-                das marcas presentes no Brasil e garantir  o constante aprimoramento
-                dos produtos e serviços.
+            <Flex 
+              direction="column" 
+              align="center" 
+              textAlign="center" 
+              gridGap="2rem" 
+              p="2rem"
+            >
+              <Box>
+                <Text fontSize="2rem">Linhas Premium</Text>
+                <Text fontSize="1rem">
+                  As peças de reposição da Inatruck convencem
+                  devido à sua excelente relação custo-benefício
+                  e disponibilidade constante assegurada pela 
+                  logística eficiente. Apostando todo seu esforço
+                  específico na Linha Pino de Mola e na Linha 3º Eixo
+                  , trabalham para satisfazer as verdadeiras necessidades
+                  dos clientes. 
+                </Text>
+              </Box>
+              <Link
+                fontSize="1rem"
+                bg="#D12128"
+                color="#FFF"
+                p="0.5rem 1rem"
+                textAlign="center"
+                maxW="50%"
+              >
+                Conheça
+              </Link>
+              <Text>
+                Em se tratando de peças de reposição para caminhões e ônibus, 
+                não tenha dúvida, temos um ótimo custo/benefício. Confira!
               </Text>
-            </Box>
+            </Flex>
 
-            <Box>
-              <Text fontSize="2rem">Visão</Text>
-              <Text fontSize="1rem">
-                Sempre se manter atualizado nas mudanças de necessidade do consumidor
-                e acompanhar as novidades do mercado no ramo de atuação.
-              </Text>
-            </Box>
+            <Flex 
+              bg="#D02129" 
+              borderRadius={4} 
+              direction="column" 
+              p="2rem" 
+              color="#FFF" 
+              gridGap="2rem"
+              textAlign="center"
+            >
+              <Box>
+                <Text fontSize="2rem">Missão</Text>
+                <Text fontSize="1rem">
+                  Fabricar toda linha de suspenção e implementos rodoviários
+                  das marcas presentes no Brasil e garantir  o constante aprimoramento
+                  dos produtos e serviços.
+                </Text>
+              </Box>
 
-            <Box>
-              <Text fontSize="2rem">Valores</Text>
-              <Text fontSize="1rem">Segurança</Text>
-              <Text fontSize="1rem">Agilidade</Text>
-              <Text fontSize="1rem">Qualidade</Text>
-            </Box>
+              <Box>
+                <Text fontSize="2rem">Visão</Text>
+                <Text fontSize="1rem">
+                  Sempre se manter atualizado nas mudanças de necessidade do consumidor
+                  e acompanhar as novidades do mercado no ramo de atuação.
+                </Text>
+              </Box>
+
+              <Box>
+                <Text fontSize="2rem">Valores</Text>
+                <Text fontSize="1rem">Segurança</Text>
+                <Text fontSize="1rem">Agilidade</Text>
+                <Text fontSize="1rem">Qualidade</Text>
+              </Box>
+            </Flex>
           </Flex>
-        </Grid>
+        ) : (
+          <Grid templateColumns="0.3fr 1fr 1fr" mt="10rem">
+            <Box />
+
+            <Flex direction="column" justify="space-between" maxW="80%">
+              <Box>
+                <Text fontSize="2rem">Linhas Premium</Text>
+                <Text fontSize="1rem">
+                  As peças de reposição da Inatruck convencem
+                  devido à sua excelente relação custo-benefício
+                  e disponibilidade constante assegurada pela 
+                  logística eficiente. Apostando todo seu esforço
+                  específico na Linha Pino de Mola e na Linha 3º Eixo
+                  , trabalham para satisfazer as verdadeiras necessidades
+                  dos clientes. 
+                </Text>
+              </Box>
+              <Link
+                fontSize="1rem"
+                bg="#D12128"
+                color="#FFF"
+                p="0.5rem 1rem"
+                textAlign="center"
+                maxW="50%"
+              >
+                Conheça
+              </Link>
+              <Text>
+                Em se tratando de peças de reposição para caminhões e ônibus, 
+                não tenha dúvida, temos um ótimo custo/benefício. Confira!
+              </Text>
+            </Flex>
+
+            <Flex 
+              bg="#D02129" 
+              borderRadius={4} 
+              direction="column" 
+              p="2rem" 
+              color="#FFF" 
+              gridGap="2rem"
+            >
+              <Box>
+                <Text fontSize="2rem">Missão</Text>
+                <Text fontSize="1rem">
+                  Fabricar toda linha de suspenção e implementos rodoviários
+                  das marcas presentes no Brasil e garantir  o constante aprimoramento
+                  dos produtos e serviços.
+                </Text>
+              </Box>
+
+              <Box>
+                <Text fontSize="2rem">Visão</Text>
+                <Text fontSize="1rem">
+                  Sempre se manter atualizado nas mudanças de necessidade do consumidor
+                  e acompanhar as novidades do mercado no ramo de atuação.
+                </Text>
+              </Box>
+
+              <Box>
+                <Text fontSize="2rem">Valores</Text>
+                <Text fontSize="1rem">Segurança</Text>
+                <Text fontSize="1rem">Agilidade</Text>
+                <Text fontSize="1rem">Qualidade</Text>
+              </Box>
+            </Flex>
+          </Grid>
+        )}
       </Box>
+
+      {isSmallScreen ? (
+        <Flex
+          p="2rem"
+          bg="#000"
+          direction="column"
+          align="center"
+          color="#FFF"
+          gridGap="2rem"
+          textAlign="center"
+        >
+          <Text fontSize="2rem">Fale Conosco</Text>
+          <Text fontSize="1rem">
+            Os colaboradores de venda capacitados tecnicamente
+            respondem aos clientes todas as dúvidas referentes 
+            ao programa de peças de reposição. As informações 
+            sobre produtos estão à disposição a qualquer momento 
+            para os clientes no website, bem como no catálogo 
+            de peças da Inatruck.
+          </Text>
+          <Link
+            fontSize="1rem"
+            bg="#D12128"
+            color="#FFF"
+            p="0.5rem 1rem"
+            textAlign="center"
+            maxW="40%"
+          >
+            Contato
+          </Link>
+        </Flex>
+        
+      ) : (
+        <Box
+          w="100%" 
+          p="3rem 0"
+          bg="#000" 
+        >
+          <Grid templateColumns="1fr 1fr 1fr">
+            <Box mr="2rem">
+              <Divider 
+                h="2px"
+                bg="#D02129"
+                borderColor="#D02129"
+                borderRadius={4}
+                opacity={1}
+                mt="1.5rem"
+              />
+            </Box>
+
+            <Flex
+              direction="column"
+              justify="space-between"
+              color="#FFF"
+              gridGap="2rem"
+            >
+              <Text fontSize="2rem">Fale Conosco</Text>
+              <Text fontSize="1rem">
+                Os colaboradores de venda capacitados tecnicamente
+                respondem aos clientes todas as dúvidas referentes 
+                ao programa de peças de reposição. As informações 
+                sobre produtos estão à disposição a qualquer momento 
+                para os clientes no website, bem como no catálogo 
+                de peças da Inatruck.
+              </Text>
+              <Link
+                fontSize="1rem"
+                bg="#D12128"
+                color="#FFF"
+                p="0.5rem 1rem"
+                textAlign="center"
+                maxW="40%"
+              >
+                Contato
+              </Link>
+            </Flex>
+
+            <Box />
+          </Grid>
+        </Box>
+      )}
     </>
   )
 }
