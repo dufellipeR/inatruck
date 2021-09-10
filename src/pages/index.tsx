@@ -10,7 +10,6 @@ import Footer from '../components/Footer';
 import Carousel from '../components/Carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-
 type Image = {
   uid: string;
   url: string;
@@ -120,10 +119,7 @@ export default function Home({ images }: ImagesProps) {
             display={{ sm: 'none', lg: 'block' }}
           />
         </Flex>
-
-        <Footer />
       </Box>
-
     </>
   )
 }

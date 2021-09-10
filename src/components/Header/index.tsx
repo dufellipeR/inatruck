@@ -14,7 +14,7 @@ import { FiMenu } from 'react-icons/fi';
 
 import { ActiveLink } from '../ActiveLink';
 
-export function Header() {
+export default function Header() {
   const isHamburgerMenu = useBreakpointValue({
     base: true,
     lg: false,
