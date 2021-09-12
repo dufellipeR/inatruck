@@ -10,7 +10,6 @@ type Post = {
   slug: string;
   title: string;
   excerpt: string;
-  updatedAt: string;
 }
 
 interface PostsProps {
@@ -18,8 +17,6 @@ interface PostsProps {
 }
 
 export default function Products({ posts }: PostsProps) {
-  console.log('posts: ', posts);
-  
   return (
     <>
       <Head>
@@ -50,14 +47,6 @@ export default function Products({ posts }: PostsProps) {
                 role="group"
                 href={`/products/${post.slug}`}
               >
-                <Text
-                  fontSize="1rem"
-                  display="flex"
-                  align="center"
-                  color="gray.300"
-                >
-                  {post.updatedAt}
-                </Text>
                 <Text
                   fontSize="1.5rem"
                   display="block"
@@ -99,11 +88,6 @@ export const getStaticProps: GetStaticProps = async () => {
       slug: post.uid,
       title: RichText.asText(post.data.title),
       excerpt: post.data.content.find(content => content.type === 'paragraph')?.text ?? '',
-      updatedAt: new Date(post.last_publication_date).toLocaleDateString('pt-BR', {
-        day: '2-digit',
-        month: 'long',
-        year: 'numeric',
-      })
     }
   })
 

@@ -13,7 +13,6 @@ interface PostProps {
     slug: string;
     title: string;
     content: string;
-    updatedAt: string;
   }
 }
 
@@ -34,14 +33,6 @@ export default function Post({ post }: PostProps) {
           m="0 auto"
         >
           <Text fontSize="3.5rem" fontWeight="bold">{post.title}</Text>
-          <Text
-            display="block"
-            fontSize="1rem"
-            color="gray.400"
-            mt="1.5rem"
-          >
-            {post.updatedAt}
-          </Text>
           <Box
             className={styles.content}
             mt="2rem"
@@ -68,11 +59,6 @@ export const getServerSideProps: GetServerSideProps = async ({ req, params }) =>
     slug,
     title: RichText.asText(response.data.title),
     content: RichText.asHtml(response.data.content),
-    updatedAt: new Date(response.last_publication_date).toLocaleDateString('pt-BR', {
-      day: '2-digit',
-      month: 'long',
-      year: 'numeric',
-    })
   }
 
   return {

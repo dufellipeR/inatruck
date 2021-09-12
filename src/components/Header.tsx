@@ -24,14 +24,18 @@ export default function Header() {
     <Box as="header" h="5rem" bg="#010001">
       {isHamburgerMenu ? (
         <Flex justify="space-between">
-          <Image 
-            src="/images/ik-logo.png" 
-            alt="logo-escrito" 
-            borderRadius="0.5rem"
-            boxShadow="2px 2px 2px 2px #fff"
+          <Link
+            href="/"
             m="auto 1rem"
             maxWidth="4rem"
-          />
+          >
+            <Image 
+              src="/images/ik-logo.png" 
+              alt="logo-escrito" 
+              borderRadius="0.5rem"
+              boxShadow="1px 1px 1px 1px #fff"
+            />
+          </Link>
           <Menu>
             <MenuButton
               as={IconButton}
@@ -45,9 +49,6 @@ export default function Header() {
               </MenuItem>
               <MenuItem>
                 <Link href="/services">SERVIÇOS</Link>
-              </MenuItem>
-              <MenuItem>
-                <Link href="/catalog">CATÁLOGO</Link>
               </MenuItem>
               <MenuItem>
                 <Link href="/products">LINHA DE PRODUTOS</Link>
@@ -66,13 +67,18 @@ export default function Header() {
           p="0 2rem"
           align="center"
         >
-          <Image 
-            src="/images/inatruck-logo.png" 
-            alt="logo-escrito" 
-            w="15rem" 
-            borderRadius="0.5rem"
-            boxShadow="2px 2px 2px 2px #fff"
-          />
+           <Link
+            href="/"
+            m="auto 1rem"
+            maxWidth="15rem"
+          >
+            <Image 
+              src="/images/inatruck-logo.png" 
+              alt="logo-escrito" 
+              borderRadius="0.5rem"
+              boxShadow="1px 1px 1px 1px #fff"
+            />
+          </Link>
 
           <Flex
             as="nav"
@@ -83,7 +89,6 @@ export default function Header() {
           >
             <ActiveLink href="/company" label="A EMPRESA" />
             <ActiveLink href="/services" label="SERVIÇOS" />
-            <ActiveLink href="/catalog" label="CATÁLOGO" />
             <ActiveLink href="/products" label="LINHA DE PRODUTOS" />
             <ActiveLink href="/contact" label="CONTATO" />
           </Flex>
