@@ -4,7 +4,7 @@ interface ButtonLinkProps extends LinkProps {
   text: string;
 }
 
-export default function ButtonLink({ text }: ButtonLinkProps) {
+export default function ButtonLink({ text, ...rest }: ButtonLinkProps) {
   return (
     <Link
       maxW="50%"
@@ -14,6 +14,7 @@ export default function ButtonLink({ text }: ButtonLinkProps) {
       p="0.5rem 1rem"
       textAlign="center"
       borderRadius={4}
+      {...rest}
     >
       {text}
     </Link>

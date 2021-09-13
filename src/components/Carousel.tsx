@@ -17,6 +17,7 @@ export default function Carousel({ images }: ImagesProps) {
       autoPlay
       infiniteLoop
       showStatus={false}
+      showThumbs={false}
     >
       {images.map(image => {
         return (

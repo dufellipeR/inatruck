@@ -1,8 +1,28 @@
-import { Box, Flex, List, ListItem, Text } from '@chakra-ui/react';
+import { useState, useEffect } from 'react';
+
+import { Box, Flex, List, ListItem, Text, Link } from '@chakra-ui/react';
 
 import Image from 'next/image';
 
+interface FooterData {
+  phone: string;
+  email: string;
+  address: string;
+}
+
 export default function Footer() {
+  const [footerData, setFooterData] = useState<FooterData>({} as FooterData);
+
+  // useEffect(() => {
+  //   const inatruckData = localStorage.getItem('paramInatruck');
+    
+  //   if (inatruckData) {
+  //     setFooterData(JSON.parse(inatruckData));
+
+  //     console.log(JSON.parse(inatruckData));
+  //   }
+  // }, [footerData]);
+
   return (
     <Box 
       bg="#D02129"
@@ -31,23 +51,51 @@ export default function Footer() {
             <Box>
               <Text>Inatruck</Text>
               <List spacing="0.5rem" mt="2rem">
-                <ListItem>Home</ListItem>
-                <ListItem>Fale Conosco</ListItem>
+                <ListItem>
+                  <Link href="/">
+                    Home
+                  </Link>
+                </ListItem>
+                <ListItem>
+                  <Link href="/contact">
+                    Fale Conosco
+                  </Link>
+                </ListItem>
               </List>
             </Box>
             <Box>
               <Text>Serviços</Text>
               <List spacing="0.5rem" mt="2rem">
-                <ListItem>Projetos Customizados</ListItem>
-                <ListItem>Rede Logística</ListItem>
-                <ListItem>Compra e Venda</ListItem>
+                <ListItem>
+                  <Link href="/services">
+                    Projetos Customizados
+                  </Link>
+                </ListItem>
+                <ListItem>
+                  <Link href="/services">
+                    Rede Logística
+                  </Link>
+                </ListItem>
+                <ListItem>
+                  <Link href="/services">
+                    Compra e Venda
+                  </Link>
+                </ListItem>
               </List>
             </Box>
             <Box>
               <Text>Produtos</Text>
               <List spacing="0.5rem" mt="2rem">
-                <ListItem>Linha de Produto</ListItem>
-                <ListItem>Catálogo Virtual</ListItem>
+                <ListItem>
+                  <Link href="/products">
+                    Linha de Produto
+                  </Link>
+                </ListItem>
+                <ListItem>
+                  <Link>
+                    Catálogo Virtual
+                  </Link>
+                </ListItem>
               </List>
             </Box>
           </Flex>

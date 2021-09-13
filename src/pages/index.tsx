@@ -1,5 +1,6 @@
 import { Box, Image, Flex, Text, Divider, Link } from '@chakra-ui/react';
 
+// import { useEffect } from 'react';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Prismic from '@prismicio/client';
@@ -15,11 +16,29 @@ type Image = {
   url: string;
 }
 
-interface ImagesProps {
-  images: Image[];
+type ParamFooter = {
+  phone: string;
+  email: string;
+  address: string;
 }
 
-export default function Home({ images }: ImagesProps) {
+type Catalog = {
+  image: string;
+  link: string;
+}
+
+interface HomeProps {
+  images: Image[];
+  footer: ParamFooter;
+  catalog: Catalog;
+}
+
+export default function Home({ images, footer, catalog }: HomeProps) {
+
+  // useEffect(() => {
+  //   localStorage.setItem('paramInatruck', JSON.stringify(footer));
+  // }, [footer]);
+
   return (
     <>
       <Head>
@@ -46,17 +65,19 @@ export default function Home({ images }: ImagesProps) {
               <Text fontSize="2rem"> CATÁLOGO VIRTUAL</Text>
               <Divider w="70%" ml="-5rem" />
               <Text fontSize="1rem"> Acesse nosso catalogo virtual e fique por dentro dos lançamentos anuais</Text>
-              <ButtonLink text="Acesse" />
+              <ButtonLink text="Acesse" href={`${catalog.link}`} target="_blank" />
             </Flex>
 
-            <Image 
-              src='/images/banner-catalog.png' 
-              alt="banner-catalog" 
-              w={400}
-              height={600}
-              mb="-2rem"
-              display={{ sm: 'none', lg: 'block' }}
-            />
+            <Link href={`${catalog.link}`} target="_blank">
+              <Image 
+                src={catalog.image}
+                alt="banner-catalog" 
+                w={400}
+                height={600}
+                mb="-2rem"
+                display={{ sm: 'none', lg: 'block' }}
+              />
+            </Link>
           </Flex>
         </Box>
 
@@ -81,8 +102,8 @@ export default function Home({ images }: ImagesProps) {
               align="center"
               gridGap="1rem"
             >
-              <ButtonLink text="Saiba Mais" />
-              <ButtonLink text="Fale Conosco" />
+              <ButtonLink text="Saiba Mais" href="/company" />
+              <ButtonLink text="Fale Conosco" href="/contact" />
             </Flex>
           </Flex>
           
@@ -102,23 +123,50 @@ export default function Home({ images }: ImagesProps) {
 export const getStaticProps: GetStaticProps = async () => {
   const prismic = getPrismicClient();
 
-  const response = await prismic.query([
+  const responseBanner = await prismic.query([
     Prismic.predicates.at('document.type', 'ban')
   ], {
     fetch: ['ban.title', 'ban.image'],
     pageSize: 100,
   })
 
-  const images = response.results.map(image => {
+  const responseFooter = await prismic.query([
+    Prismic.predicates.at('document.type', 'parametros_gerais')
+  ], {
+    fetch: ['parametros_gerais.telefone', 'parametros_gerais.email', 'parametros_gerais.endereco'],
+    pageSize: 100,
+  });
+
+  const responseCatalog = await prismic.query([
+    Prismic.predicates.at('document.type', 'ca')
+  ], {
+    fetch: ['ca.imagem', 'ca.link'],
+    pageSize: 100,
+  });
+
+  const images = responseBanner.results.map(image => {
     return {
       uid: image.uid,
       url: image.data.image.url,
     }
   })
 
+  const footer = {
+    phone: responseFooter.results[0].data.telefone[0].text,
+    email: responseFooter.results[0].data.email[0].text,
+    address: responseFooter.results[0].data.endereco[0].text,
+  };
+
+  const catalog = {
+    image: responseCatalog.results[0].data.imagem.url,
+    link: responseCatalog.results[0].data.link.url
+  }
+
   return {
     props: {
-      images
-    }
+      images,
+      footer,
+      catalog
+    },
   }
 }
