@@ -82,7 +82,7 @@ export default function Company() {
                   dos clientes. 
                 </Text>
               </Box>
-              <ButtonLink text="Conheça" />
+              <ButtonLink text="Conheça" href="/products" />
               <Text>
                 Em se tratando de peças de reposição para caminhões e ônibus, 
                 não tenha dúvida, temos um ótimo custo/benefício. Confira!
@@ -140,7 +140,7 @@ export default function Company() {
                   dos clientes. 
                 </Text>
               </Box>
-              <ButtonLink text="Conheça" />
+              <ButtonLink text="Conheça" href="/products" />
               <Text>
                 Em se tratando de peças de reposição para caminhões e ônibus, 
                 não tenha dúvida, temos um ótimo custo/benefício. Confira!
@@ -202,9 +202,8 @@ export default function Company() {
             para os clientes no website, bem como no catálogo 
             de peças da Inatruck.
           </Text>
-          <ButtonLink text="Contato" />
+          <ButtonLink text="Contato" href="/contact" />
         </Flex>
-        
       ) : (
         <Box
           w="100%" 
@@ -238,7 +237,7 @@ export default function Company() {
                 para os clientes no website, bem como no catálogo 
                 de peças da Inatruck.
               </Text>
-              <ButtonLink text="Contato" />
+              <ButtonLink text="Contato" href="/contact" />
             </Flex>
 
             <Box />

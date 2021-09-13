@@ -1,11 +1,10 @@
-import { Flex, Box, Text, Stack, Image, Textarea } from '@chakra-ui/react';
+import { Flex, Box, Text, Stack, Image, Textarea, Button } from '@chakra-ui/react';
 import Head from 'next/head';
 
 import Input from '../components/Input';
 import ButtonLink from '../components/ButtonLink';
 import HeaderContent from '../components/HeaderContent';
 import { useState } from 'react';
-
 
 export default function Contact() {
 
@@ -18,10 +17,9 @@ export default function Contact() {
   const [title, setTitle] = useState('')
   const [message, setMessage] = useState('')
   const [submitted, setSubmitted] = useState(false)
+  const [hasErrorForm, setHasErrorForm] = useState(false);
 
-  const handleSubmit = () => { 
-    
-    console.log('Sending')
+  const handleSubmit = async () => { 
     let data = {
       name,
       email,
@@ -33,30 +31,31 @@ export default function Contact() {
       message
     }
 
-    fetch('/api/contact', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    }).then((res) => {
-      console.log('Response received')
-      if (res.status === 200) {
-        console.log('Response succeeded!')
-        setSubmitted(true)
-        setName('')
-        setEmail('')
-        setCompany('')
-        setNumber('')
-        setCity('')
-        setState('')
-        setTitle('')
-        setMessage('')
-      }
-    })}
+    if (name && email && number && title) {
+      setHasErrorForm(false);
 
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
 
+      setSubmitted(true)
+      setName('')
+      setEmail('')
+      setCompany('')
+      setNumber('')
+      setCity('')
+      setState('')
+      setTitle('')
+      setMessage('')
+    } else {
+      setHasErrorForm(true);
+    }
+  }
 
   return (
     <>
@@ -89,16 +88,35 @@ export default function Contact() {
           >
             <Box w={{ sm: '100%', lg: '50%' }} p={{ sm: '2rem', lg: '0' }}>
               <Stack spacing="4">
-                <Input onChange={(e) =>  { setName(e.target.value)}} name="name" type="text" placeholder="Nome*" />
-                <Input onChange={(e) =>  { setCompany(e.target.value)}} name="company" type="text" placeholder="Empresa" />
-                <Input onChange={(e) =>  { setNumber(e.target.value)}} name="tel" type="text" placeholder="Telefone*" />
-                <Input onChange={(e) =>  { setEmail(e.target.value)}} name="email" type="email" placeholder="Email*" />
-                <Input onChange={(e) =>  { setCity(e.target.value)}} name="city" type="text" placeholder="Município" />
-                <Input onChange={(e) =>  { setState(e.target.value)}} name="uf" type="text" placeholder="Estado" />
-                <Input onChange={(e) =>  { setTitle(e.target.value)}} name="subject" type="text" placeholder="Assunto*" />
-                <Textarea onChange={(e) => { setMessage(e.target.value)}} name="message" placeholder="Mensagem" focusBorderColor="red.500" bgColor="gray.200"/>
+                <Input onChange={(e) =>  { setName(e.target.value)}} value={name} name="name" type="text" placeholder="Nome*" />
+                <Input onChange={(e) =>  { setCompany(e.target.value)}} value={company} name="company" type="text" placeholder="Empresa" />
+                <Input onChange={(e) =>  { setNumber(e.target.value)}} value={number} name="tel" type="text" placeholder="Telefone*" />
+                <Input onChange={(e) =>  { setEmail(e.target.value)}} value={email} name="email" type="email" placeholder="Email*" />
+                <Input onChange={(e) =>  { setCity(e.target.value)}} value={city} name="city" type="text" placeholder="Município" />
+                <Input onChange={(e) =>  { setState(e.target.value)}} value={state} name="uf" type="text" placeholder="Estado" />
+                <Input onChange={(e) =>  { setTitle(e.target.value)}} value={title} name="subject" type="text" placeholder="Assunto*" />
+                <Textarea onChange={(e) => { setMessage(e.target.value)}} value={message} name="message" placeholder="Mensagem" focusBorderColor="red.500" bgColor="gray.200"/>
                 
-                <button type="button" onClick={ () => handleSubmit()}> Enviar </button>
+                {
+                  hasErrorForm && <Text
+                    fontSize="md"
+                    color="red.300"
+                  >
+                    Preencha os campos obrigatórios
+                  </Text>
+                }
+                
+
+                <Button 
+                  onClick={() => handleSubmit()}
+                  bg="#DD0022"
+                  color="#FFF"
+                  _hover={{
+                    bg: 'red.600'
+                  }}
+                >
+                  Enviar
+                </Button>
               </Stack>
             </Box>
             <Box>

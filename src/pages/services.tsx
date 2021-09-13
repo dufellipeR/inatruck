@@ -39,7 +39,7 @@ export default function Services() {
             h="100%"
             m="0 auto"
             textAlign="center"
-            p={{ sm: '0 2rem', lg: '0' }}
+            p={{ sm: '2rem', lg: '0' }}
           >
             <Text fontSize="2rem" marginBottom="4rem">Rede Logística</Text>
             <Flex
@@ -51,7 +51,7 @@ export default function Services() {
               textAlign={{ sm: 'center', lg: 'start' }}
               p={{ sm: '0 2rem', lg: '0' }}
             >
-              <Box>
+              <Box display={{ sm: 'none', lg: 'block' }}>
                 <Lottie 
                   options={{
                     loop: true,
@@ -99,7 +99,7 @@ export default function Services() {
             h="100%"
             m="0 auto"
             textAlign="center"
-            p={{ sm: '0 2rem', lg: '0' }}
+            p={{ sm: '2rem', lg: '0' }}
           >
             <Text fontSize="2rem" marginBottom="4rem">Compra e Venda</Text>
             <Flex
@@ -111,7 +111,7 @@ export default function Services() {
               textAlign={{ sm: 'center', lg: 'start' }}
               p={{ sm: '0 2rem', lg: '0' }}
             >
-              <Box>
+              <Box display={{ sm: 'none', lg: 'block' }}>
                 <Lottie 
                   options={{
                     loop: true,
@@ -153,7 +153,7 @@ export default function Services() {
             h="100%"
             m="0 auto"
             textAlign="center"
-            p={{ sm: '0 2rem', lg: '0' }}
+            p={{ sm: '2rem', lg: '0' }}
           >
             <Text fontSize="2rem" marginBottom="4rem">Projetos Customizados</Text>
             <Flex
@@ -165,7 +165,7 @@ export default function Services() {
               textAlign={{ sm: 'center', lg: 'start' }}
               p={{ sm: '0 2rem', lg: '0' }}
             >
-              <Box>
+              <Box display={{ sm: 'none', lg: 'block' }}>
                 <Lottie 
                   options={{
                     loop: true,

@@ -1,7 +1,19 @@
+import { NextApiRequest, NextApiResponse } from 'next'
 
+import { getPrismicClient } from '../../services/prismic';
+import Prismic from '@prismicio/client';
 
-export default function contact (req, res) {
-  let nodemailer = require('nodemailer')
+import nodemailer from 'nodemailer';
+
+export default async function contact(req: NextApiRequest, res: NextApiResponse) {
+  const prismic = getPrismicClient();
+
+  const responseFooter = await prismic.query([
+    Prismic.predicates.at('document.type', 'parametros_gerais')
+  ], {
+    fetch: ['parametros_gerais.email'],
+  });
+
   const transporter = nodemailer.createTransport({
     port: 465,
     host: "smtp.gmail.com",
@@ -14,7 +26,7 @@ export default function contact (req, res) {
 
   const mailData = {
     from: 'noreply.websiteform@gmail.com',
-    to: 'client email',
+    to: responseFooter.results[0].data.email[0].text,
     subject: `Assunto: ${req.body.title}`,
     text: req.body.message,
     html: ` 
@@ -29,19 +41,13 @@ export default function contact (req, res) {
     Mensagem: 
     ${req.body.message}
     `
-   }
+  }
 
-  
   transporter.sendMail(mailData, function (err, info) {
     if(err)
       console.log(err)
     else
-      console.log(info)
+      console.log(info);
   })
-
-
-
-  res.status(200)
-
-  
 }
+

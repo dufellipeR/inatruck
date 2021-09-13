@@ -1,6 +1,6 @@
 import { Box, Image, Flex, Text, Divider, Link } from '@chakra-ui/react';
 
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Prismic from '@prismicio/client';
@@ -20,6 +20,7 @@ type ParamFooter = {
   phone: string;
   email: string;
   address: string;
+  linkCatalog: string;
 }
 
 type Catalog = {
@@ -35,14 +36,14 @@ interface HomeProps {
 
 export default function Home({ images, footer, catalog }: HomeProps) {
 
-  // useEffect(() => {
-  //   localStorage.setItem('paramInatruck', JSON.stringify(footer));
-  // }, [footer]);
+  useEffect(() => {
+    localStorage.setItem('paramInatruck', JSON.stringify(footer));
+  }, [footer]);
 
   return (
     <>
       <Head>
-        <title>Inatruck</title>
+        <title>Inatruck | Home</title>
       </Head>
         
       <Carousel images={images} />
@@ -108,7 +109,7 @@ export default function Home({ images, footer, catalog }: HomeProps) {
           </Flex>
           
           <Image 
-            src='/images/ik-logo.png' 
+            src='/ik-logo.png' 
             alt="ik-logo"
             w={200}
             h={200} 
@@ -155,6 +156,7 @@ export const getStaticProps: GetStaticProps = async () => {
     phone: responseFooter.results[0].data.telefone[0].text,
     email: responseFooter.results[0].data.email[0].text,
     address: responseFooter.results[0].data.endereco[0].text,
+    linkCatalog: responseCatalog.results[0].data.link.url,
   };
 
   const catalog = {

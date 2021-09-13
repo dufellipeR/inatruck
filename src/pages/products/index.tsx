@@ -24,8 +24,9 @@ export default function Products({ posts }: PostsProps) {
       </Head>
       
       <Box
-        bg="#010010"
+        bg="#010001"
         w="100%"
+        minH="60vh"
       >
         <Box
           maxW={1120}

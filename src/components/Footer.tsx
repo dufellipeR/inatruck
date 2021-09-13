@@ -8,20 +8,19 @@ interface FooterData {
   phone: string;
   email: string;
   address: string;
+  linkCatalog: string;
 }
 
 export default function Footer() {
   const [footerData, setFooterData] = useState<FooterData>({} as FooterData);
 
-  // useEffect(() => {
-  //   const inatruckData = localStorage.getItem('paramInatruck');
+  useEffect(() => {
+    const inatruckData = localStorage.getItem('paramInatruck');
     
-  //   if (inatruckData) {
-  //     setFooterData(JSON.parse(inatruckData));
-
-  //     console.log(JSON.parse(inatruckData));
-  //   }
-  // }, [footerData]);
+    if (inatruckData) {
+      setFooterData(JSON.parse(inatruckData));
+    }
+  }, []);
 
   return (
     <Box 
@@ -45,7 +44,7 @@ export default function Footer() {
               <Image src="/images/logo-escrito.png" alt="logo-escrito" width={200} height={50} />
             </Flex>
             <Text>INATRUCK IND. COM. DE AUTOPEÇAS EIRELI EPP</Text>
-            <Text>Rua Blumenau, Número 4920, Bairro Araponguinhas - Timbó - Santa Catarina </Text>
+            <Text>{footerData.address}</Text>
           </Flex>
           <Flex gridGap="3rem" display={{ sm: 'none', lg: 'flex' }}>
             <Box>
@@ -92,7 +91,7 @@ export default function Footer() {
                   </Link>
                 </ListItem>
                 <ListItem>
-                  <Link>
+                  <Link href={`${footerData.linkCatalog}`} target="_blank">
                     Catálogo Virtual
                   </Link>
                 </ListItem>
@@ -108,8 +107,8 @@ export default function Footer() {
           <Box m="1rem 0" textAlign="center" lineHeight="1.5">
 
             { /* Numero e email do CMS  */}
-            <Text fontSize="24px" >(47) 3382-4161</Text>
-            <Text>inatruck@hotmail.com</Text>
+            <Text fontSize="24px">{footerData.phone}</Text>
+            <Text>{footerData.email}</Text>
           </Box>
         </Flex>
       </Box>

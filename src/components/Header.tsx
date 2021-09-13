@@ -30,7 +30,7 @@ export default function Header() {
             maxWidth="4rem"
           >
             <Image 
-              src="/images/ik-logo.png" 
+              src="/ik-logo.png" 
               alt="logo-escrito" 
               borderRadius="0.5rem"
               boxShadow="1px 1px 1px 1px #fff"
