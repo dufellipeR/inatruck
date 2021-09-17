@@ -6,7 +6,9 @@ import ButtonLink from '../components/ButtonLink';
 
 export default function Company() {
   const isSmallScreen = useBreakpointValue({
-    base: true,
+    null: true,
+    "2sm": true,
+    sm: true,
     lg: false,
   });
 

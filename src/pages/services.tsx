@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Flex, Box, Text, Divider, Grid, Image, Link, useBreakpointValue } from '@chakra-ui/react';
+import { Flex, Box, Text } from '@chakra-ui/react';
 import HeaderContent from '../components/HeaderContent';
 import { useState } from 'react';
 import Lottie from 'react-lottie';
@@ -12,8 +12,6 @@ export default function Services() {
   const [animationState, setAnimationState] = useState({
     isStopped: false, isPaused: false
   })
-
-
 
   return (
     <>
