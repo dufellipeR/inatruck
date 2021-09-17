@@ -27,11 +27,11 @@ export default function Services() {
 
       <Box
         w="100%"
-        p={{ sm: '0', lg: '1rem 0 5rem 0' }}
+        p={{ null: '0', lg: '1rem 0 5rem 0' }}
       >
         { /* Service Box */}
         <Box w="100%"
-          p={{ sm: '0', lg: '3rem 0 5rem 0' }}
+          p={{ null: '0', lg: '3rem 0 5rem 0' }}
         >
           <Flex
             maxW={1120}
@@ -39,19 +39,19 @@ export default function Services() {
             h="100%"
             m="0 auto"
             textAlign="center"
-            p={{ sm: '2rem', lg: '0' }}
+            p={{ null: '2rem', lg: '0' }}
           >
             <Text fontSize="2rem" marginBottom="4rem">Rede Logística</Text>
             <Flex
               maxW={1120}
               h="100%"
               m="0 auto"
-              justify={{ sm: 'center', lg: 'space-between' }}
+              justify={{ null: 'center', lg: 'space-between' }}
               align="center"
-              textAlign={{ sm: 'center', lg: 'start' }}
-              p={{ sm: '0 2rem', lg: '0' }}
+              textAlign={{ null: 'center', lg: 'start' }}
+              p={{ null: '0 2rem', lg: '0' }}
             >
-              <Box display={{ sm: 'none', lg: 'block' }}>
+              <Box display={{ null: 'none', lg: 'block' }}>
                 <Lottie 
                   options={{
                     loop: true,
@@ -68,7 +68,7 @@ export default function Services() {
                 />
               </Box>
 
-              <Box w={{ sm: '100%', lg: '60%' }}>
+              <Box w={{ null: '100%', lg: '60%' }}>
                 <Text fontSize="1rem">
                   A entrega do material adquirido (acima de R$ 1.500,00)
                   é realizada por uma transportadora contratada pela Inatruck
@@ -89,7 +89,7 @@ export default function Services() {
 
         { /* Service Box */}
         <Box w="100%"
-          p={{ sm: '0', lg: '3rem 0 5rem 0' }}
+          p={{ null: '0', lg: '3rem 0 5rem 0' }}
           bgColor="#d02129"
           textColor="#fff"
         >
@@ -99,19 +99,19 @@ export default function Services() {
             h="100%"
             m="0 auto"
             textAlign="center"
-            p={{ sm: '2rem', lg: '0' }}
+            p={{ null: '2rem', lg: '0' }}
           >
             <Text fontSize="2rem" marginBottom="4rem">Compra e Venda</Text>
             <Flex
               maxW={1120}
               h="100%"
               m="0 auto"
-              justify={{ sm: 'center', lg: 'space-between' }}
+              justify={{ null: 'center', lg: 'space-between' }}
               align="center"
-              textAlign={{ sm: 'center', lg: 'start' }}
-              p={{ sm: '0 2rem', lg: '0' }}
+              textAlign={{ null: 'center', lg: 'start' }}
+              p={{ null: '0 2rem', lg: '0' }}
             >
-              <Box display={{ sm: 'none', lg: 'block' }}>
+              <Box display={{ null: 'none', lg: 'block' }}>
                 <Lottie 
                   options={{
                     loop: true,
@@ -128,7 +128,7 @@ export default function Services() {
                 />
               </Box>
 
-              <Box w={{ sm: '100%', lg: '60%' }}>
+              <Box w={{ null: '100%', lg: '60%' }}>
                 <Text fontSize="1rem">
                   Além dos representantes, a venda direto de fábrica é um meio
                   eficiente de adquirir o produto com preço mais em conta, portanto
@@ -145,7 +145,7 @@ export default function Services() {
 
         { /* Service Box */}
         <Box w="100%"
-          p={{ sm: '0', lg: '3rem 0 5rem 0' }}
+          p={{ null: '0', lg: '3rem 0 5rem 0' }}
         >
           <Flex
             maxW={1120}
@@ -153,19 +153,19 @@ export default function Services() {
             h="100%"
             m="0 auto"
             textAlign="center"
-            p={{ sm: '2rem', lg: '0' }}
+            p={{ null: '2rem', lg: '0' }}
           >
             <Text fontSize="2rem" marginBottom="4rem">Projetos Customizados</Text>
             <Flex
               maxW={1120}
               h="100%"
               m="0 auto"
-              justify={{ sm: 'center', lg: 'space-between' }}
+              justify={{ null: 'center', lg: 'space-between' }}
               align="center"
-              textAlign={{ sm: 'center', lg: 'start' }}
-              p={{ sm: '0 2rem', lg: '0' }}
+              textAlign={{ null: 'center', lg: 'start' }}
+              p={{ null: '0 2rem', lg: '0' }}
             >
-              <Box display={{ sm: 'none', lg: 'block' }}>
+              <Box display={{ null: 'none', lg: 'block' }}>
                 <Lottie 
                   options={{
                     loop: true,
@@ -182,7 +182,7 @@ export default function Services() {
                 />
               </Box>
 
-              <Box w={{ sm: '100%', lg: '60%' }}>
+              <Box w={{ null: '100%', lg: '60%' }}>
                 <Text fontSize="1rem">
                   A Inatruck produz peças de acordo com as necessidades individuais dos clientes.
                   Com base nisso, elaboramos projetos que atendam as necessidades específicas de cada um,

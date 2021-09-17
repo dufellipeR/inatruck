@@ -36,7 +36,7 @@ export default function Footer() {
         <Flex 
           justify="space-between" 
           align="center" 
-          direction={{ sm: 'column', lg: 'row' }}
+          direction={{ null: 'column', lg: 'row' }}
         >
           
           <Flex direction="column" gridGap="0.5rem" >
@@ -46,7 +46,7 @@ export default function Footer() {
             <Text>INATRUCK IND. COM. DE AUTOPEÇAS EIRELI EPP</Text>
             <Text>{footerData.address}</Text>
           </Flex>
-          <Flex gridGap="3rem" display={{ sm: 'none', lg: 'flex' }}>
+          <Flex gridGap="3rem" display={{ null: 'none', lg: 'flex' }}>
             <Box>
               <Text>Inatruck</Text>
               <List spacing="0.5rem" mt="2rem">

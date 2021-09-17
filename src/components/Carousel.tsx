@@ -18,6 +18,7 @@ export default function Carousel({ images }: ImagesProps) {
       infiniteLoop
       showStatus={false}
       showThumbs={false}
+      width="100%"
     >
       {images.map(image => {
         return (

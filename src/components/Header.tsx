@@ -16,7 +16,9 @@ import { ActiveLink } from './ActiveLink';
 
 export default function Header() {
   const isHamburgerMenu = useBreakpointValue({
-    base: true,
+    null: true,
+    "2sm": true,
+    sm: true,
     lg: false,
   });
 

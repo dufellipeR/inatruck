@@ -70,7 +70,7 @@ export default function Contact() {
 
       <Box
         w="100%" 
-        p={{ sm: '0', lg: '3rem 0 5rem 0' }}
+        p={{ null: '0', lg: '3rem 0 5rem 0' }}
       >
         <Flex
           direction="column"
@@ -82,11 +82,11 @@ export default function Contact() {
           <Text>Entre em contato! Retornaremos sua mensagem o mais breve possível.</Text>
 
           <Flex
-            mt={{ sm: '2rem', lg: '5rem' }}
+            mt={{ null: '2rem', lg: '5rem' }}
             justify="space-between"
             align="center"
           >
-            <Box w={{ sm: '100%', lg: '50%' }} p={{ sm: '2rem', lg: '0' }}>
+            <Box w={{ null: '100%', lg: '50%' }} p={{ null: '2rem', lg: '0' }}>
               <Stack spacing="4">
                 <Input onChange={(e) =>  { setName(e.target.value)}} value={name} name="name" type="text" placeholder="Nome*" />
                 <Input onChange={(e) =>  { setCompany(e.target.value)}} value={company} name="company" type="text" placeholder="Empresa" />
@@ -124,7 +124,7 @@ export default function Contact() {
                 src="/images/form-contact.svg" 
                 alt="materiais" 
                 w="500px"
-                display={{ sm: 'none', lg: 'block' }}
+                display={{ null: 'none', lg: 'block' }}
               />
             </Box>
           </Flex>

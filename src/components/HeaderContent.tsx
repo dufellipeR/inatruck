@@ -14,7 +14,9 @@ interface HeaderContentProps {
 
 export default function HeaderContent({ title, description = '' }: HeaderContentProps) {
   const isSmallScreen = useBreakpointValue({
-    base: true,
+    null: true,
+    "2sm": true,
+    sm: true,
     lg: false,
   });
 
@@ -45,9 +47,9 @@ export default function HeaderContent({ title, description = '' }: HeaderContent
         <Grid 
           h="100%"
           m="0 auto"
-          p={{ sm: '2rem', lg: '0' }}
+          p={{ null: '2rem', lg: '0' }}
           templateColumns="1fr 1fr"
-          justify={{ sm: 'center', lg: 'space-between' }}
+          justify={{ null: 'center', lg: 'space-between' }}
           alignItems="center"
         > 
           <Flex direction="column" align="flex-end" gridGap="0.5rem" maxW="70%">

@@ -23,18 +23,18 @@ export default function Company() {
     
       <Box     
         w="100%" 
-        p={{ sm: '0', lg: '3rem 0 5rem 0' }}
+        p={{ null: '0', lg: '3rem 0 5rem 0' }}
       >
         <Flex
           maxW={1120}
           h="100%"
           m="0 auto"
-          justify={{ sm: 'center', lg: 'space-between' }}
+          justify={{ null: 'center', lg: 'space-between' }}
           align="center"
-          textAlign={{ sm: 'center', lg: 'start' }}
-          p={{ sm: '0 2rem', lg: '0' }}
+          textAlign={{ null: 'center', lg: 'start' }}
+          p={{ null: '0 2rem', lg: '0' }}
         >
-          <Box w={{ sm: '100%', lg: '60%' }}>
+          <Box w={{ null: '100%', lg: '60%' }}>
             <Text fontSize="2rem">Ônibus e Caminhões</Text>
             <Text fontSize="1rem">
               Desde a fundação da empresa em 2006, 
@@ -53,7 +53,7 @@ export default function Company() {
           <Image 
             src="/images/a-empresa.png" 
             alt="materiais" 
-            display={{ sm: 'none', lg: 'block' }}
+            display={{ null: 'none', lg: 'block' }}
           />
         </Flex>
 
