@@ -101,7 +101,7 @@ export default function Footer() {
         </Flex>
         <Flex borderTop="1px solid #FFF" mt="3rem" justify="space-between" align="center">
           <Box m="2rem 0">
-            <Image src="/images/dudu-logo.png" alt="Dudu Logo" width={30} height={30} />
+            {/* <Image src="/images/dudu-logo.png" alt="Dudu Logo" width={30} height={30} /> */}
             <Image src="/images/rocket-logo.png" alt="Rocket Logo" width={100} height={40} />
           </Box>
           <Box m="1rem 0" textAlign="center" lineHeight="1.5">
