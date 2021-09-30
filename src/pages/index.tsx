@@ -174,5 +174,6 @@ export const getStaticProps: GetStaticProps = async () => {
       footer,
       catalog
     },
+    revalidate: 300, // 5min
   }
 }
