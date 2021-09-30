@@ -170,5 +170,6 @@ export const getStaticProps: GetStaticProps = async () => {
       footer,
       catalog
     },
+    revalidate: 10, //10s
   }
 }
