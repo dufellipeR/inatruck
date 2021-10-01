@@ -13,8 +13,6 @@ export default function Services() {
     isStopped: false, isPaused: false
   })
 
-
-
   return (
     <>
       <Head>
@@ -165,22 +163,24 @@ export default function Services() {
               textAlign={{ sm: 'center', lg: 'start' }}
               p={{ sm: '0 2rem', lg: '0' }}
             >
-              <Box display={{ sm: 'none', lg: 'block' }}>
-                <Lottie 
-                  options={{
-                    loop: true,
-                    autoplay: true,
-                    animationData: customizedAm,
-                    rendererSettings: {
-                      preserveAspectRatio: 'xMidYMid slice'
-                    }
-                  }}
-                  height={400}
-                  width={400}
-                  isStopped={animationState.isStopped}
-                  isPaused={animationState.isPaused}
+              <Flex 
+                align="center"
+                justify="center"
+                display={{ sm: 'none', lg: 'flex' }}
+              >
+                <Image 
+                  src="/images/ISU.png" 
+                  alt="ISU" 
+                  display={{ sm: 'none', lg: 'block' }}
+                  w="15rem"
                 />
-              </Box>
+                <Image 
+                  src="/images/ISA.1017.png" 
+                  alt="ISA.1017" 
+                  display={{ sm: 'none', lg: 'block' }}
+                  w="15rem"
+                />
+              </Flex>
 
               <Box w={{ sm: '100%', lg: '60%' }}>
                 <Text fontSize="1rem">
