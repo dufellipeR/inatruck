@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Flex, Box, Text } from '@chakra-ui/react';
+import { Flex, Box, Text, Image } from '@chakra-ui/react';
 import HeaderContent from '../components/HeaderContent';
 import { useState } from 'react';
 import Lottie from 'react-lottie';
@@ -163,22 +163,24 @@ export default function Services() {
               textAlign={{ null: 'center', lg: 'start' }}
               p={{ null: '0 2rem', lg: '0' }}
             >
-              <Box display={{ null: 'none', lg: 'block' }}>
-                <Lottie 
-                  options={{
-                    loop: true,
-                    autoplay: true,
-                    animationData: customizedAm,
-                    rendererSettings: {
-                      preserveAspectRatio: 'xMidYMid slice'
-                    }
-                  }}
-                  height={400}
-                  width={400}
-                  isStopped={animationState.isStopped}
-                  isPaused={animationState.isPaused}
+              <Flex 
+                align="center"
+                justify="center"
+                display={{ null: 'none', lg: 'flex' }}
+              >
+                <Image 
+                  src="/images/ISU.png" 
+                  alt="ISU" 
+                  display={{ null: 'none', lg: 'block' }}
+                  w="15rem"
                 />
-              </Box>
+                <Image 
+                  src="/images/ISA.1017.png" 
+                  alt="ISA.1017" 
+                  display={{ null: 'none', lg: 'block' }}
+                  w="15rem"
+                />
+              </Flex>
 
               <Box w={{ null: '100%', lg: '60%' }}>
                 <Text fontSize="1rem">

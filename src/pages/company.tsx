@@ -53,9 +53,16 @@ export default function Company() {
           </Box>
 
           <Image 
-            src="/images/a-empresa.png" 
-            alt="materiais" 
+            src="/images/IBA.1923.png" 
+            alt="IBA.1923" 
             display={{ null: 'none', lg: 'block' }}
+            h="10rem"
+          />
+          <Image 
+            src="/images/ICG.144.png" 
+            alt="ICG.144" 
+            display={{ null: 'none', lg: 'block' }}
+            h="10rem"
           />
         </Flex>
 
@@ -142,7 +149,22 @@ export default function Company() {
                   dos clientes. 
                 </Text>
               </Box>
-              <ButtonLink text="Conheça" href="/products" />
+              
+              <Grid templateColumns="1fr 1fr 1fr" alignItems="center">
+                <ButtonLink text="Conheça" href="/products" />
+
+                <Image 
+                  src="/images/ISU.930.png" 
+                  alt="ISU.930" 
+                  display={{ null: 'none', lg: 'block' }}
+                />
+                <Image 
+                  src="/images/IBE.439.png" 
+                  alt="IBE.439" 
+                  display={{ null: 'none', lg: 'block' }}
+                />
+              </Grid>
+
               <Text>
                 Em se tratando de peças de reposição para caminhões e ônibus, 
                 não tenha dúvida, temos um ótimo custo/benefício. Confira!
