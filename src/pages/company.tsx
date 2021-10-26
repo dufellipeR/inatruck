@@ -150,7 +150,7 @@ export default function Company() {
                 </Text>
               </Box>
               
-              <Grid templateColumns="1fr 1fr 1fr" alignItems="center">
+              <Grid templateColumns="1fr 25% 25%" alignItems="center">
                 <ButtonLink text="Conheça" href="/products" />
 
                 <Image 
